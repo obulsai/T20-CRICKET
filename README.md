@@ -38,9 +38,7 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 - 📊 Displays score, overs, winner
 
 #### `led_controller.v`
-- 🔴 Red LED: wickets  
-- 🟢 Green LED: overs  
-- 🟡 Yellow LED: match result
+- 🔴 Red LED Scrolling : match winner 
 
 #### `debounce.v`
 - 🛠️ Debounces push button input
