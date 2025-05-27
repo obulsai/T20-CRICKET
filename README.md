@@ -2,17 +2,9 @@
 
 ## 📘 Overview
 
-This project implements a mini version of a T20 cricket game using Verilog HDL on the Artix-7 Edge FPGA development board (⏱️ 50 MHz clock). It simulates batting innings of two teams, generates random scores, and displays outputs on 7-segment displays and LEDs.
-
-## 🎯 Features
-
-- 🔁 Random score generation using LFSR (Linear Feedback Shift Register)
-- 🔢 7-segment display output for:
-  - 🏏 Team scores# 🏏 T20 Cricket Game on FPGA (Artix-7 Edge Board)
-
-## 📘 Overview
-
 This project implements a mini version of a T20 cricket game using Verilog HDL on the **Artix-7 Edge FPGA** development board (⏱️ 50 MHz clock). It simulates the batting innings of two teams, generates random scores using an LFSR, and displays real-time outputs on **7-segment displays** and **LEDs**.
+
+![Artix-7 Edge Board](https://github.com/obulsai/T20-CRICKET/blob/51dc8a1b9e119199edc973df80097adc92733b80/implementation/EDGE_FPGA)
 
 ## 🎯 Features
 
@@ -38,6 +30,7 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 #### `lfsr.v`
 - 🔄 8-bit Linear Feedback Shift Register
 - Generates pseudo-random numbers to simulate cricket events (runs or wickets)
+- [Tap configuration to be added if known]
 
 #### `score_manager.v`
 - 📈 Keeps track of:
@@ -62,7 +55,8 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 
 ## 🖥️ Board Configuration
 
-- **Board**: Artix-7 Edge FPGA
+- **Board**: Artix-7 Edge FPGA  
+  ![Artix-7 Board](https://github.com/obulsai/T20-CRICKET/blob/51dc8a1b9e119199edc973df80097adc92733b80/implementation/EDGE_FPGA)
 - **Clock**: 50 MHz (divided internally)
 - 🔘 **Input**:
   - Push button (for next ball / start)
@@ -80,8 +74,12 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
   - Winning logic validation
 
 📸 **Images**:
-- RTL schematic: `rtl_schematic.png`
-- Simulation waveform: `simulation_waveform.png`
+- 🧠 Score Generator View:  
+  ![Score Generator](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/implementation/2_score_generate.jpeg)
+- 🧩 Game Flow Design:  
+  ![Game Flow](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/Module_designs/game_flow.jpeg)
+- 🛠️ Elaborated RTL Design:  
+  ![Elaborated Design](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/RTL/elaborated_design.jpeg)
 
 ## 🎥 Demo
 
@@ -102,82 +100,6 @@ YouTube Video Link: [To be added here]
 - 🎳 Add bowling logic to simulate bowler variation
 - ⏲️ Include a countdown timer for over simulation
 - 📟 UART or OLED display for live commentary and stats
-
-## 👤 Author
-
-**T. Obul Sai**  
-ECE 3rd Year, RGUKT RK Valley
-
-  - ⏳ Overs and balls
-- 💡 LED indicators for:
-  - ❌ Wickets
-  - ✅ Overs completed
-  - 🏆 Winning team
-- 🔘 Start/reset button for game control
-- ⏱️ Real-time T20 game simulation
-
-## 🧩 Project Structure
-
-### 🔝 Top Module: `t20_cricket_game.v`
-- Integrates all modules
-- Manages game state and display logic
-
-### 📦 Modules
-
-#### `lfsr.v`
-- 🔄 8-bit LFSR for pseudo-random runs/wickets
-- Tap configuration: [add if known]
-
-#### `score_manager.v`
-- 📈 Tracks runs, wickets, overs, innings
-- ⚠️ Handles innings end and game transitions
-
-#### `seven_seg_driver.v`
-- 🧮 Converts binary to 7-segment format
-- 📊 Displays score, overs, winner
-
-#### `led_controller.v`
-- 🔴 Red LED Scrolling : match winner 
-
-#### `debounce.v`
-- 🛠️ Debounces push button input
-
-## 🖥️ Board Configuration
-
-- Board: Artix-7 Edge
-- Clock: 50 MHz (divided internally)
-- 🔘 Input:
-  - Push button (next ball/start)
-- 🔢 Output:
-  - 7-segment displays (score, overs)
-  - LEDs (events and winner)
-
-## 🧪 Simulation
-
-- 🧾 Testbench: t20_cricket_tb.v
-- ⚙️ Simulator: ModelSim / Vivado Simulator
-- 🔍 Simulates LFSR, score progression, winner logic
-
-📸 Images:
-- RTL schematic: `rtl_schematic.png`
-- Waveform: `simulation_waveform.png`
-
-## 🎥 Demo
-
-YouTube Video Link: [To be added here]
-
-## ▶️ How to Run
-
-1. 🔧 Synthesize the design using Vivado 2020.2+
-2. 📤 Generate and program bitstream to Artix-7 Edge board
-3. 🕹️ Press button to play each ball
-4. 👀 View score, overs, and results on display and LEDs
-
-## 🚀 Future Enhancements
-
-- 🎳 Add bowling logic
-- ⏲️ Real-time countdown per over
-- 📟 UART/OLED display for commentary
 
 ## 👤 Author
 
