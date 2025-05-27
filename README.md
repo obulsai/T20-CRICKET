@@ -55,7 +55,7 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 
 ## 🧪 Simulation
 
-- 🧾 Testbench: `t20_cricket_tb.v`
+- 🧾 Testbench: t20_cricket_tb.v
 - ⚙️ Simulator: ModelSim / Vivado Simulator
 - 🔍 Simulates LFSR, score progression, winner logic
 
