@@ -38,7 +38,6 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 #### `lfsr.v`
 - 🔄 8-bit Linear Feedback Shift Register
 - Generates pseudo-random numbers to simulate cricket events (runs or wickets)
-- [Tap configuration to be added if known]
 
 #### `score_manager.v`
 - 📈 Keeps track of:
@@ -56,8 +55,6 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
   - Winning team at match end
 
 #### `led_controller.v`
-- 🔴 Red LEDs indicate **wickets**
-- ✅ Green LEDs blink per over
 - 🏆 LED scroll pattern to indicate **winning team**
 
 #### `debounce.v`
