@@ -4,7 +4,7 @@
 
 This project implements a mini version of a T20 cricket game using Verilog HDL on the **Artix-7 Edge FPGA** development board (⏱️ 50 MHz clock). It simulates the batting innings of two teams, generates random scores using an LFSR, and displays real-time outputs on **7-segment displays** and **LEDs**.
 
-![Artix-7 Edge Board](https://github.com/obulsai/T20-CRICKET/blob/51dc8a1b9e119199edc973df80097adc92733b80/implementation/EDGE_FPGA)
+![Artix-7 Edge Board](https://github.com/obulsai/T20-CRICKET/blob/8b2a1465714110bac0d39ab138085ff546a4b080/implementation/EDGE_FPGA.jpeg)
 
 ## 🎯 Features
 
@@ -30,7 +30,6 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 #### `lfsr.v`
 - 🔄 8-bit Linear Feedback Shift Register
 - Generates pseudo-random numbers to simulate cricket events (runs or wickets)
-- [Tap configuration to be added if known]
 
 #### `score_manager.v`
 - 📈 Keeps track of:
@@ -56,7 +55,7 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
 ## 🖥️ Board Configuration
 
 - **Board**: Artix-7 Edge FPGA  
-  ![Artix-7 Board](https://github.com/obulsai/T20-CRICKET/blob/51dc8a1b9e119199edc973df80097adc92733b80/implementation/EDGE_FPGA)
+  ![Artix-7 Board](https://github.com/obulsai/T20-CRICKET/blob/8b2a1465714110bac0d39ab138085ff546a4b080/implementation/EDGE_FPGA.jpeg)
 - **Clock**: 50 MHz (divided internally)
 - 🔘 **Input**:
   - Push button (for next ball / start)
@@ -74,11 +73,11 @@ This project implements a mini version of a T20 cricket game using Verilog HDL o
   - Winning logic validation
 
 📸 **Images**:
-- 🧠 Score Generator View:  
+- ##🧠 Score Generator View:  
   ![Score Generator](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/implementation/2_score_generate.jpeg)
-- 🧩 Game Flow Design:  
+- ##🧩 Game Flow Design:  
   ![Game Flow](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/Module_designs/game_flow.jpeg)
-- 🛠️ Elaborated RTL Design:  
+- ##🛠️ Elaborated RTL Design:  
   ![Elaborated Design](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/RTL/elaborated_design.jpeg)
 
 ## 🎥 Demo
