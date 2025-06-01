@@ -66,7 +66,7 @@ This project implements a mini T20 cricket game in Verilog on the **Artix-7 Edge
 ![Score Generator](implementation/2_score_generate.jpeg)
 
 ### 🔁 Game Flow
-![Game Flow](implementation/game_flow.jpeg)
+![Game Flow](https://github.com/obulsai/T20-CRICKET/blob/ede03724f2d1148bce0b87dbe8296671ec4f2e01/Module_designs/game_flow.jpeg)
 
 ### 📐 Elaborated RTL Design
 ![RTL](RTL/elaborated_design.jpeg)
