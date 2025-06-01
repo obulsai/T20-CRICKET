@@ -2,104 +2,106 @@
 
 ## 📘 Overview
 
-This project implements a mini version of a T20 cricket game using Verilog HDL on the **Artix-7 Edge FPGA** development board (⏱️ 50 MHz clock). It simulates the batting innings of two teams, generates random scores using an LFSR, and displays real-time outputs on **7-segment displays** and **LEDs**.
+This project implements a mini T20 cricket game in Verilog on the **Artix-7 Edge FPGA** board. It simulates two batting innings using a pseudo-random LFSR and displays real-time score, overs, and game result using 7-segment displays and LEDs.
+
+---
 
 ## 🎯 Features
 
-- 🔁 **Random score generation** using LFSR (Linear Feedback Shift Register)
-- 🔢 7-segment display output for:
-  - 🏏 Team scores
-  - ⏳ Overs and balls
-- 💡 LED indicators for:
-  - ❌ Wickets
-  - ✅ Overs completed
-  - 🏆 Winning team (scrolling pattern)
-- 🔘 Start/next-ball push-button for control
-- ⏱️ Real-time T20 cricket match simulation
-
-## 🧩 Project Structure
-
-### 🔝 Top Module: `t20_cricket_game.v`
-- Connects all submodules
-- Manages game state transitions, display outputs, and user inputs
-
-### 📦 Modules
-
-#### `lfsr.v`
-- 🔄 8-bit Linear Feedback Shift Register
-- Generates pseudo-random numbers to simulate cricket events (runs or wickets)
-
-#### `score_manager.v`
-- 📈 Keeps track of:
-  - Runs
-  - Wickets
-  - Overs and balls
-  - Inning status
-- ⚠️ Handles game logic, innings switching, and winner detection
-
-#### `seven_seg_driver.v`
-- 🧮 Converts binary values to 7-segment display format
-- 📊 Displays:
+- 🔁 Random event generation using LFSR
+- 🔢 7-Segment display for:
   - Team scores
   - Overs and balls
-  - Winning team at match end
+- 💡 LEDs for:
+  - Wickets
+  - Overs completion
+  - Winning team scroll
+- 🔘 Push-button for ball-by-ball control
+- ⏱️ Real-time simulation
 
-#### `led_controller.v`
-- 🏆 LED scroll pattern to indicate **winning team**
+---
 
-#### `debounce.v`
-- 🛠️ Debounces mechanical push-button input to avoid signal glitches
+## 🧩 Code Structure
 
-## 🖥️ Board Configuration
+### 🔝 `t20_cricket_game.v` (Top Module)
+- Integrates all modules
+- Handles user input, score control, and game state transitions
+
+### 📦 Submodules
+
+| File                | Description                                          |
+|---------------------|------------------------------------------------------|
+| `lfsr.v`            | 8-bit LFSR for random score/wicket generation       |
+| `score_manager.v`   | Manages score, wickets, overs, innings, winner      |
+| `seven_seg_driver.v`| Converts binary values to 7-segment format          |
+| `led_controller.v`  | Controls LEDs for visual result display             |
+| `debounce.v`        | Debounces push-button input                         |
+
+---
+
+## 🖥️ Hardware Setup
 
 - **Board**: Artix-7 Edge FPGA  
-  ![Artix-7 Board](https://github.com/obulsai/T20-CRICKET/blob/8b2a1465714110bac0d39ab138085ff546a4b080/implementation/EDGE_FPGA.jpeg)
-- **Clock**: 50 MHz (divided internally)
-- 🔘 **Input**:
-  - Push button (for next ball / start)
-- 🔢 **Output**:
-  - 7-segment displays (score and overs)
-  - LEDs (for wickets, overs, and winning team)
+- **Input**: Push-button (1-bit)
+- **Output**:  
+  - 7-Segment Displays for score & overs  
+  - LEDs for wickets, overs completed, and winner scroll
+
+---
 
 ## 🧪 Simulation
 
-- 🧾 **Testbench**: [`t20_cricket_tb.v`](https://github.com/obulsai/T20-CRICKET/blob/5330869aa6c7453d9851506dabc6b8fa8f53aea7/t20_cricket_tb.v)
-- ⚙️ Simulated using: **ModelSim** or **Vivado Simulator**
-- 🔍 Covers:
+- **Tool**: ModelSim / Vivado Simulator
+- **Testbench**: `t20_cricket_tb.v`
+- Tests:
   - LFSR randomness
-  - Game score transitions
-  - Winning logic validation
+  - Game state transitions
+  - Winner declaration logic
 
-### 📸 **Score Generator View**
-![Score Generator](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/implementation/2_score_generate.jpeg)
+---
 
-### 📸 **Game Flow Design**
-![Game Flow](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/Module_designs/game_flow.jpeg)
+## 📸 Visuals
 
-### 📸 **Elaborated RTL Design**
-![Elaborated Design](https://github.com/obulsai/T20-CRICKET/blob/303cb4524ee5b088c3775852c67f4e71efba9269/RTL/elaborated_design.jpeg)
+### 🔋 Score Generator
+![Score Generator](implementation/2_score_generate.jpeg)
 
-## 🎥 Demo
+### 🔁 Game Flow
+![Game Flow](implementation/game_flow.jpeg)
 
-YouTube Video Link: [To be added here]
+### 📐 Elaborated RTL Design
+![RTL](RTL/elaborated_design.jpeg)
 
-## ▶️ How to Run
+---
 
-1. 🔧 Open the project in **Vivado 2020.2+**
-2. 💻 Synthesize and implement the design
-3. 📤 Generate bitstream and program to the **Artix-7 Edge** board
-4. 🕹️ Press the push-button for each ball
-5. 👀 Monitor:
-   - Team scores and overs on 7-segment display
-   - Game progress and result via LEDs
+## ▶️ Run Instructions
+
+1. Open project in **Vivado 2020.2+**
+2. Synthesize and Implement the design
+3. Generate Bitstream and program to FPGA
+4. Press the push-button for each delivery
+5. Monitor:
+   - Score and overs on 7-segment displays
+   - Wickets, innings, and result via LEDs
+
+---
+
+## 🎥 Demo Video
+
+📺 [Watch on YouTube](https://youtu.be/kWOw-FWc5Vg?si=2BD5atmlYgCtzvvv)
+
+---
 
 ## 🚀 Future Enhancements
 
-- 🎳 Add bowling logic to simulate bowler variation
-- ⏲️ Include a countdown timer for over simulation
-- 📟 UART or OLED display for live commentary and stats
+- Simulate bowler variations
+- Add over countdown timer
+- Use UART/OLED for commentary and score stats
+
+---
 
 ## 👤 Author
 
 **T. Obul Sai**  
-ECE 4th Year, RGUKT RK Valley
+ECE 4th Year, RGUKT RK Valley  
+🔗 GitHub: [obulsai](https://github.com/obulsai)  
+📹 Project Demo: [YouTube](https://youtu.be/kWOw-FWc5Vg?si=2BD5atmlYgCtzvvv)
